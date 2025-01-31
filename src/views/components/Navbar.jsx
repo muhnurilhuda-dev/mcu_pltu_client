@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/PLN.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faRightToBracket, faTimes, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 export default function Navbar() {
@@ -51,8 +51,8 @@ export default function Navbar() {
 
           <div className='justify-self-end flex gap-4'>
             <Link to='/login' className="flex items-center justify-center rounded-md text-red hover:before:bg-redborder-red-500 relative h-[35px] overflow-hidden border border-red-500 bg-white px-3 text-red-500 transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-red-500 before:transition-all before:duration-500 hover:text-white hover:shadow-2xl hover:shadow-red-500 hover:before:left-0 hover:before:w-full hover:border-red-500 focus:outline-none">
-              <span className="relative z-10">Login as an Admin</span>
-              <FontAwesomeIcon icon={faArrowRight} className="ml-2 relative z-10 group-hover:text-white" />
+              <span className="relative z-10">Login</span>
+              <FontAwesomeIcon icon={faRightToBracket} className="ml-2 relative z-10 group-hover:text-white" />
             </Link>
 
             <button
@@ -60,7 +60,7 @@ export default function Navbar() {
               className='flex items-center justify-center rounded-md relative h-[35px] overflow-hidden border border-green-600 bg-white px-3 text-green-600 transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-600 before:transition-all before:duration-500 hover:text-white hover:shadow-2xl hover:shadow-green-500 hover:before:left-0 hover:before:w-full hover:border-green-600 focus:outline-none'
             >
               <span className='relative z-10'>Register</span>
-              <FontAwesomeIcon icon={faArrowRight} className='ml-2 relative z-10'></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faUserPlus} className='ml-2 relative z-10'></FontAwesomeIcon>
             </button>
           </div>
         </nav>
