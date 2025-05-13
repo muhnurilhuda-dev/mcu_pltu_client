@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { useStateContext } from '../../contexts/ContextProvider';
 import axiosClient from '../../axios-client';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const emailRef = useRef();
@@ -11,8 +11,11 @@ export default function Login() {
   const [errors, setErrors] = useState(null);
   const {setUser, setToken} = useStateContext();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const onSubmit = (ev) => {
     ev.preventDefault();
+    setIsLoading(true);
     
     const payload = {
       email: emailRef.current.value,
@@ -26,6 +29,8 @@ export default function Login() {
       .then(({data}) => {
         setUser(data.user);
         setToken(data.token);
+        navigate('/dashboard');
+        setIsLoading(false);
       })
       .catch(err => {
         console.error(err);
@@ -62,7 +67,9 @@ export default function Login() {
             <input ref={emailRef} type="email" placeholder='Email Address' className='mb-2 px-2 py-3 bg-white text-black placeholder:text-gray-400 rounded-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-blue-400 outline-none' />
             <input ref={passwordRef} type="password" placeholder='Password' className='mb-2 px-2 py-3 bg-white text-black placeholder:text-gray-400 rounded-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-blue-400 outline-none' />
             <button className='py-2 px-2 mt-2 align-middle justify-center rounded-md bg-blue-500 text-white font-bold hover:bg-blue-800 transition-colors'>
-              Log In
+              {/* Log In */}
+              <svg className={`${isLoading ? 'inline-block size-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white' : 'hidden'}`}></svg>
+              <span className={`${!isLoading ? 'block' : 'hidden'}`}>Log In</span>
             </button>
             <span className='text-black text-center mt-2'>Not registered yet? <Link to="/signup">Register here</Link></span>
           </div>

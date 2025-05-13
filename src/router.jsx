@@ -12,32 +12,49 @@ import HomePage from "./views/pages/HomePage";
 import Monitoring from "./views/pages/Monitoring";
 import WorkPermit from "./views/pages/WorkPermit";
 import MakePermit from "./views/pages/MakePermit";
+import PermitToWork from "./views/pages/dashboard/PermitToWork";
+import HotWorkPermit from "./views/pages/dashboard/form/HotWorkPermit";
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <RoleBasedRedirect />,
+  //   children: [
+      
+  //   ]
+  // },
   {
     path: '/',
     element: <DefaultLayout />,
     children: [
       {
-        path: '/',
-        element: <RoleBasedRedirect />,
-        children: [
-          {
-            path: '/dashboard',
-            element: <Dashboard />
-          },
-          {
-            path: '/admin',
-            element: <Admin />
-          }
-        ]
+        path: '/dashboard',
+        element: <Dashboard />,
       },
       {
-        path: '*',
-        element: <NotFound />
+        path: '/permit-to-work',
+        element: <PermitToWork />
+      },
+      {
+        path: '/workpermit',
+        element: <WorkPermit />
+      },
+      {
+        path: '/workpermit/make',
+        // element: <MakePermit />
+        element: <HotWorkPermit />
+      },
+      {
+        path: '/admin',
+        element: <Admin />
       }
     ]
   },
+  {
+    path: '*',
+    element: <NotFound />
+  },
+  
   {
     path: '/',
     element: <GuestLayout />,
@@ -51,23 +68,14 @@ const router = createBrowserRouter([
         element: <Monitoring />
       },
       {
-        path: '/workpermit',
-        element: <WorkPermit />
+        path: '/signup/:role',
+        element: <Signup />
       },
       {
-        path: '/workpermit/make',
-        element: <MakePermit />
+        path: '/login',
+        element: <Login />
       },
-      
     ]
-  },
-  {
-    path: '/signup/:role',
-    element: <Signup />
-  },
-  {
-    path: '/login',
-    element: <Login />
   },
   {
     path: '*',

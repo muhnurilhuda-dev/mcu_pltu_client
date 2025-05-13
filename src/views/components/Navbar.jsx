@@ -8,12 +8,21 @@ export default function Navbar() {
   const [isModelOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const roles = [
-    "Safety Officer",
-    "Permit Applicant",
-    "Medical Team",
-    "Asistem Manajer K3",
+  let roles = [
+    "safety_officer",
+    "permit_applicant",
+    "tim_medis",
+    "asisten_manajer_k3",
   ];
+
+  let renamedRoles = {
+    safety_officer: "Safety Officer",
+    permit_applicant: "Permit Applicant",
+    tim_medis: "Tim Medis",
+    asisten_manajer_k3: "Asisten Manajer K3",
+  };
+
+  const renamedRole = roles.map((role) => renamedRoles[role]);
 
   return (
     <div>
@@ -92,7 +101,7 @@ export default function Navbar() {
                     }}
                     className='w-full bg-cyan-600 text-white py-2 rounded-md transition-all hover:bg-cyan-800 focus:outline-none'
                   >
-                    {role}
+                    {renamedRole[i]}
                   </button>
                 ))}
               </div>

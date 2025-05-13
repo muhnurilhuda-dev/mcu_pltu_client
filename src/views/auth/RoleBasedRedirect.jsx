@@ -27,22 +27,37 @@ export default function RoleBasedRedirect() {
     }
   }, [user, setUser, token]);
 
-  if(!token) {
-    return <Navigate to="/login" />;
-  }
+  // if(!token) {
+  //   return <Navigate to="/homepage" />;
+  // }
+
+  useEffect(() => {
+    if(!loading) {
+      if(!token) {
+        navigate("/homepage");
+      } else if (user) {
+        navigate("/dashboard");
+      }
+    }
+  }, [loading, token, user, navigate]);
 
   if(loading) {
     return null;
   }
 
   // Redirect based on the role
-  if (user?.jabatan === 'pegawai' && location.pathname !== '/dashboard') {
-    // return <Navigate to="/dashboard" />
-    navigate('/dashboard');
-  } else if (user?.jabatan === 'petugas_medis' && location.pathname !== '/admin') {
-    // return <Navigate to="/admin" />
-    navigate('/admin');
-  }
+  // if (user?.jabatan === 'pegawai' && location.pathname !== '/dashboard') {
+  //   // return <Navigate to="/dashboard" />
+  //   navigate('/dashboard');
+  // } else if (user?.jabatan === 'petugas_medis' && location.pathname !== '/admin') {
+  //   // return <Navigate to="/admin" />
+  //   navigate('/admin');
+  // }
+
+  // if(user && location.pathname !== '/dashboard') {
+  //   navigate('/dashboard');
+  //   return null;
+  // }
 
   return <Outlet />
 
