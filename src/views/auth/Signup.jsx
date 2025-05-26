@@ -10,9 +10,9 @@ export default function Signup() {
   // const selectedRole = params.get("role");
   let { role } = useParams();
   let renamedRoles = {
+    petugas_k3: "Petugas K3",
+    petugas_medis: "Petugas Medis",
     safety_officer: "Safety Officer",
-    permit_applicant: "Permit Applicant",
-    tim_medis: "Tim Medis",
     asisten_manajer_k3: "Asisten Manajer K3",
   };
   // if (role in renamedRoles) {

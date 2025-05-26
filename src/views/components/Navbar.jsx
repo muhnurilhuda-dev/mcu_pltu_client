@@ -9,16 +9,16 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   let roles = [
-    "safety_officer",
     "permit_applicant",
-    "tim_medis",
+    "petugas_medis",
+    "safety_officer",
     "asisten_manajer_k3",
   ];
 
   let renamedRoles = {
-    safety_officer: "Safety Officer",
     permit_applicant: "Permit Applicant",
-    tim_medis: "Tim Medis",
+    petugas_medis: "Petugas Medis",
+    safety_officer: "Safety Officer",
     asisten_manajer_k3: "Asisten Manajer K3",
   };
 

@@ -97,6 +97,14 @@ export default function DefaultLayout() {
               </a>
             </li>
           </ul>
+          <ul className="space-y-4">
+            <li>
+              <a 
+                href='/medical-check-up' 
+                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/medical-check-up' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}>Medical Check Up
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
 

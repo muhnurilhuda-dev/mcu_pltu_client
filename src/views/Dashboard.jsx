@@ -7,7 +7,7 @@ export default function Dashboard({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="mx-24 my-2">
+    <div className="w-full mx-24 my-2">
       <div className="grid grid-cols-2 gap-2">
         <div className="bg-white rounded-md shadow-md p-6">Dasboard Item</div>
         <div className="bg-white rounded-md shadow-md p-6">Dasboard Item</div>

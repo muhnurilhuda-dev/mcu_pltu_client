@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <WorkPermit />
       },
       {
-        path: '/workpermit/make',
+        path: '/workpermit/make/:id_jenis_ptw',
         // element: <MakePermit />
         element: <HotWorkPermit />
       },
