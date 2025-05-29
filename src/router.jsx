@@ -10,10 +10,12 @@ import Login from "./views/auth/Login";
 import RoleBasedRedirect from "./views/auth/RoleBasedRedirect";
 import HomePage from "./views/pages/HomePage";
 import Monitoring from "./views/pages/Monitoring";
-import WorkPermit from "./views/pages/WorkPermit";
+import WorkPermit from "./views/pages/work-permit/JenisWorkPermit";
 import MakePermit from "./views/pages/MakePermit";
 import PermitToWork from "./views/pages/dashboard/PermitToWork";
 import HotWorkPermit from "./views/pages/dashboard/form/HotWorkPermit";
+import JenisWorkPermit from "./views/pages/work-permit/JenisWorkPermit";
+import Parameters from "./views/pages/parameters/Parameters";
 
 const router = createBrowserRouter([
   // {
@@ -37,7 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/workpermit',
-        element: <WorkPermit />
+        element: <JenisWorkPermit />
+      },
+      {
+        path:'/parameters',
+        element: <Parameters />
       },
       {
         path: '/workpermit/make/:id_jenis_ptw',

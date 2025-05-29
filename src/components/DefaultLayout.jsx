@@ -72,7 +72,7 @@ export default function DefaultLayout() {
   // const renamedRole = roles.map((role) => renamedRoles[role]);
 
   return (
-    <div className="flex h-screen w-full bg-gray-100">
+    <div className="flex h-screen w-screen bg-gray-100">
       {/* <h1 className="text-black">This is DASHBOARD PAGE</h1> */}
       {/* Sidebar */}
       <div className={`absolute inset-y-0 left-0 w-64 bg-cyan-800 text-white p-5 transform transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform`}>
@@ -85,7 +85,9 @@ export default function DefaultLayout() {
             <li>
               <a 
                 href='/dashboard' 
-                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/dashboard' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}>Dashboard
+                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/dashboard' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}
+              >
+                Dashboard
               </a>
             </li>
           </ul>
@@ -93,7 +95,19 @@ export default function DefaultLayout() {
             <li>
               <a 
                 href='/workpermit' 
-                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/workpermit' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}>Permit to work
+                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/workpermit' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}
+              >
+                Permit to work
+              </a>
+            </li>
+          </ul>
+          <ul className='space-y-4'>
+            <li>
+              <a 
+                href="/parameters"
+                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/parameters' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}
+              >
+                Parameters
               </a>
             </li>
           </ul>
@@ -101,7 +115,9 @@ export default function DefaultLayout() {
             <li>
               <a 
                 href='/medical-check-up' 
-                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/medical-check-up' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}>Medical Check Up
+                className={`flex items-center gap-2 p-2 rounded text-white hover:text-white transition-all ${window.location.pathname === '/medical-check-up' ? 'bg-cyan-900' : 'hover:bg-cyan-700'}`}
+              >
+                Medical Check Up
               </a>
             </li>
           </ul>
